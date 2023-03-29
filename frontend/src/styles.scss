@@ -1,0 +1,117 @@
+:root {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+main {
+    position: fixed;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+
+    .TabsRoot {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin-bottom: 40px;
+
+        .TabsTrigger {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            padding: 0 20px;
+            color: black;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &:first-child {
+                border-top-left-radius: 6px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 6px;
+            }
+
+            &[data-state='active'] {
+                border-bottom: 2px solid black;
+            }
+        }
+
+        .TabsContent {
+            padding: 20px;
+            background-color: white;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+    }
+
+    .usersList {
+        text-align: center;
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid black;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        input {
+            border: 1px solid black;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        button {
+            background: black;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}

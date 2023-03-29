@@ -53,9 +53,21 @@ export function NewUserForm() {
 
     return (
         <form onSubmit={handleCreateUser}>
-            <input type="text" ref={nameRef} id="name" name="name" />
-            <input type="email" ref={emailRef} id="email" name="email" />
-            <button type="submit">Send</button>
+            <input
+                type="text"
+                ref={nameRef}
+                id="name"
+                name="name"
+                placeholder="User Name"
+            />
+            <input
+                type="email"
+                ref={emailRef}
+                id="email"
+                name="email"
+                placeholder="User Email"
+            />
+            <button type="submit">Create</button>
         </form>
     );
 }
