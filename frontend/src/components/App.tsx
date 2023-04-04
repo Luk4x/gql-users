@@ -4,6 +4,7 @@ import * as Tabs from '@radix-ui/react-tabs';
 import { BiLoaderAlt } from 'react-icons/bi';
 
 import { NewUserForm } from './NewUserForm';
+import { UpdateUserForm } from './UpdateUserForm';
 
 type User = {
     id: string;
@@ -29,11 +30,23 @@ export function App() {
             <Tabs.Root defaultValue="createUser" className="TabsRoot">
                 <Tabs.List className="TabsList">
                     <Tabs.Trigger className="TabsTrigger" value="createUser">
-                        Create User
+                        Create
+                    </Tabs.Trigger>
+                    <Tabs.Trigger className="TabsTrigger" value="updateUser">
+                        Update
+                    </Tabs.Trigger>
+                    <Tabs.Trigger className="TabsTrigger" value="deleteUser">
+                        Delete
                     </Tabs.Trigger>
                 </Tabs.List>
                 <Tabs.Content className="TabsContent" value="createUser">
                     <NewUserForm />
+                </Tabs.Content>
+                <Tabs.Content className="TabsContent" value="updateUser">
+                    <UpdateUserForm />
+                </Tabs.Content>
+                <Tabs.Content className="TabsContent" value="deleteUser">
+                    delete
                 </Tabs.Content>
             </Tabs.Root>
             <div className="usersList">

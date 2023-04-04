@@ -5,6 +5,7 @@
 
 type Mutation {
   createUser(email: String!, name: String!): User!
+  updateUser(currentEmail: String!, newEmail: String!, newName: String!): User!
 }
 
 type Query {

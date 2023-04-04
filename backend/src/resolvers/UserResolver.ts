@@ -24,4 +24,30 @@ export class UserResolver {
 
         return newUser;
     }
+
+    @Mutation(() => User)
+    async updateUser(
+        @Arg('currentEmail') currentEmail: String,
+        @Arg('newName') newName: String,
+        @Arg('newEmail') newEmail: String
+    ) {
+        const user = this.data.find(user => user.email === currentEmail);
+        console.log(this.data, user);
+
+        if (user) {
+            const updatedUser = {
+                ...user,
+                name: newName ? newName : user.name,
+                email: newEmail ? newEmail : user.email
+            };
+
+            const userIndex = this.data.findIndex(user => user.email === currentEmail);
+            this.data.splice(userIndex, 1);
+            this.data.push(updatedUser);
+
+            console.log(this.data, userIndex);
+
+            return updatedUser;
+        }
+    }
 }

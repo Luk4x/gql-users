@@ -31,35 +31,39 @@ main {
         max-width: 400px;
         margin-bottom: 40px;
 
-        .TabsTrigger {
+        .TabsList {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            padding: 0 20px;
-            color: black;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
 
-            &:hover {
-                opacity: 0.8;
-            }
+            .TabsTrigger {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: white;
+                padding: 0 20px;
+                color: black;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 15px;
+                cursor: pointer;
+                transition: all 0.1s ease-in-out;
 
-            &:first-child {
-                border-top-left-radius: 6px;
-            }
+                &:hover {
+                    opacity: 0.8;
+                }
 
-            &:last-child {
-                border-top-right-radius: 6px;
-            }
+                &:first-child {
+                    border-top-left-radius: 6px;
+                }
 
-            &[data-state='active'] {
-                border-bottom: 2px solid black;
+                &:last-child {
+                    border-top-right-radius: 6px;
+                }
+
+                &[data-state='active'] {
+                    border-bottom: 2px solid black;
+                }
             }
         }
 
