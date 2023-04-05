@@ -5,6 +5,7 @@ import { BiLoaderAlt } from 'react-icons/bi';
 
 import { NewUserForm } from './NewUserForm';
 import { UpdateUserForm } from './UpdateUserForm';
+import { DeleteUserForm } from './DeleteUserForm';
 
 type User = {
     id: string;
@@ -46,7 +47,7 @@ export function App() {
                     <UpdateUserForm />
                 </Tabs.Content>
                 <Tabs.Content className="TabsContent" value="deleteUser">
-                    delete
+                    <DeleteUserForm />
                 </Tabs.Content>
             </Tabs.Root>
             <div className="usersList">

@@ -50,4 +50,16 @@ export class UserResolver {
             return updatedUser;
         }
     }
+
+    @Mutation(() => User)
+    async deleteUser(@Arg('email') email: String) {
+        const userIndex = this.data.findIndex(user => user.email === email);
+
+        if (userIndex !== -1) {
+            const deletedUser = this.data[userIndex];
+
+            this.data.splice(userIndex, 1);
+            return deletedUser;
+        }
+    }
 }
