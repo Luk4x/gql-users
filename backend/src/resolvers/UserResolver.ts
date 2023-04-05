@@ -31,23 +31,19 @@ export class UserResolver {
         @Arg('newName') newName: String,
         @Arg('newEmail') newEmail: String
     ) {
-        const user = this.data.find(user => user.email === currentEmail);
-        console.log(this.data, user);
+        const userIndex = this.data.findIndex(user => user.email === currentEmail);
 
-        if (user) {
-            const updatedUser = {
+        if (userIndex !== -1) {
+            const user = this.data[userIndex];
+
+            this.data[userIndex] = {
                 ...user,
                 name: newName ? newName : user.name,
                 email: newEmail ? newEmail : user.email
             };
 
-            const userIndex = this.data.findIndex(user => user.email === currentEmail);
-            this.data.splice(userIndex, 1);
-            this.data.push(updatedUser);
-
-            console.log(this.data, userIndex);
-
-            return updatedUser;
+            // updated user
+            return this.data[userIndex];
         }
     }
 
